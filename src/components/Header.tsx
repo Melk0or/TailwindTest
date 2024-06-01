@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from '@tanstack/react-router'
-import { LucideDoorClosed, LucideDoorOpen } from 'lucide-react'
+import { LucideDoorClosed } from 'lucide-react'
 
 const Header = () => {
     const location = useLocation()

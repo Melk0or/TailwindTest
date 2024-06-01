@@ -24,7 +24,7 @@ import AddTablItemForm from '@/components/AddTableItemForm'
 import { X } from 'lucide-react'
 import { deleteMutations } from '@/shared/hooks/queries/deleteMutations'
 import UpdateTableItemForm from '@/components/UpdateTableItemForm'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Skeleton } from '@/components/ui/skeleton'
 
 export interface IInvoice {
@@ -42,13 +42,13 @@ export interface IInvoice {
 const TableDemo = () => {
     const tableItems = useSelector(getMainItemsTableSelector)
     const dispatch: AppDispatch = useDispatch()
-    console.log(tableItems)
     const { mutate: deleteMutate } = deleteMutations()
 
     const deleteItems = (invoice: IInvoice) => {
         deleteMutate(invoice.id)
         dispatch(removeItem(invoice))
     }
+    // @ts-ignore: error message
     const { data } = useQuery({
         queryKey: ['table'],
         queryFn: () => {
