@@ -67,7 +67,7 @@ module.exports = {
           to: { height: "0" },
         },
         vanishing: {
-          '0%, ': { opacity: '0' },
+          '0%': { opacity: '0' },
           '50%' : { opacity: '1' },
           '100%': { opacity: '0' },
         }
